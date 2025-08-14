@@ -8,7 +8,7 @@ const PreLoader = () => {
 
   return (
     loading && (
-      <div className="w-screen h-screen flex fixed items-center justify-center bg-black z-50">
+      <div className="w-screen h-screen flex fixed items-center justify-center bg-black z-55">
         <div role="status">
           <svg
             aria-hidden="true"
