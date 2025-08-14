@@ -8,13 +8,13 @@ function Footer() {
         <a href="#projects">Projects</a>
       </div>
       <div className="  items-center flex gap-3">
-        <a href="#">
+        <a href="https://github.com/Herdiansyh">
           <i className="ri-github-fill ri-2x"></i>
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/hrdian00s?utm_source=ig_web_button_share_sheet&igsh=MXBtaHp2NDJmcWgwcw==">
           <i className="ri-instagram-fill ri-2x"></i>
         </a>
-        <a href="#">
+        <a href="https://www.linkedin.com/in/moh-herdiansyah-171868341/">
           <i className="ri-linkedin-fill ri-2x"></i>
         </a>
       </div>

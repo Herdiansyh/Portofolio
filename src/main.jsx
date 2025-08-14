@@ -11,15 +11,19 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
 import "./index.css";
+import { ThemeProvider } from "./Components/ThemeProvider.jsx";
 AOS.init();
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <PreLoader />
-    <div className="container mx-auto px-4">
-      <Navbar />
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <PreLoader />
+      <div className="container mx-auto px-4">
+        <Navbar />
 
-      <App />
-      <Footer />
-    </div>
+        <App />
+        <Footer />
+      </div>
+    </ThemeProvider>
   </StrictMode>
 );
