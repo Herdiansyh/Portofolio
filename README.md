@@ -53,7 +53,7 @@ git clone <repo-url>
 cd <repo-folder>
 Install dependencies:
 
----
+
 
 npm install
 Start the development server:
@@ -71,7 +71,6 @@ AOS animations refresh automatically when the theme changes to prevent disappear
 
 🚀 Deployment
 Build for production:
-
 
 
 npm run build
