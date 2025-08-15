@@ -4,6 +4,7 @@ import DataImage, { listProyek } from "./data";
 import { listTools } from "./data";
 import { useTheme } from "./Components/ThemeProvider";
 import AOS from "aos";
+import Swal from "sweetalert2";
 
 function App() {
   const [position, setPosition] = useState([0, 0, 10]);
@@ -13,7 +14,7 @@ function App() {
   const projectBg = theme === "dark" ? "bg-zinc-800" : "bg-gray-300 shadow-lg";
   const textColor = theme === "dark" ? "text-white" : "text-gray-700";
   const h1Color = theme === "dark" ? "text-white" : "text-black";
-  const contactBg = theme === "dark" ? "bg-zinc-800" : "bg-gray-300 shadow-lg";
+  const contactBg = theme === "dark" ? "bg-zinc-800" : "bg-gray-200 shadow-lg";
   const inputBg =
     theme === "dark"
       ? "border-zinc-500 text-white"
@@ -66,6 +67,23 @@ function App() {
     AOS.refreshHard(); // lebih agresif
   }, [theme]);
 
+  const handleDownload = () => {
+    Swal.fire({
+      title: "Download CV?",
+      text: "File akan diunduh ke perangkat Anda.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Ya, download",
+      cancelButtonText: "Batal",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // trigger download
+        window.location.href = "/CV.pdf"; // pastikan file ada di public/CV.pdf
+        // Atau bisa pakai tag <a> programmatically
+      }
+    });
+  };
+
   return (
     <>
       <div className={`min-h-screen transition-colors duration-300 `}>
@@ -95,12 +113,13 @@ function App() {
               my skills and creating interfaces that users enjoy
             </p>
             <div className="flex items-center gap-2 sm:gap-4">
-              <a
-                href="#"
-                className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600"
+              <button
+                onClick={handleDownload}
+                className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 hover:cursor-pointer"
               >
                 Download CV <i className="ri-download-line"></i>
-              </a>
+              </button>
+
               <a
                 href="#projects"
                 className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600"
@@ -128,12 +147,16 @@ function App() {
               About Me
             </div>
 
-            <p className={`text-base/loose mb-10 ${pColor}`}>
-              Ever since I discovered the world of web development, I’ve been
-              driven by curiosity and a desire to learn. I love exploring new
-              technologies, tackling challenges, and turning ideas into websites
-              that work and inspire. Each project I take on is an opportunity to
-              grow and create something meaningful
+            <p className={`text-base/loose mb-10 text-center ${pColor}`}>
+              I am a graduate in Informatics Engineering. My journey into
+              programming began after high school when I first worked as a
+              production operator in a factory. After a year of working, I
+              decided to pursue a degree in Informatics. I was always fascinated
+              by the idea that IT professionals are seen as skilled and
+              innovative, which sparked my interest in programming. Since then,
+              I have been passionate about learning IT, especially web
+              development, and I continue to strive to improve my skills and
+              grow every day.
             </p>
           </div>
           <div className="tools mt-32">
@@ -152,8 +175,8 @@ function App() {
               data-aos-delay="300"
               className={`xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full   text-base/loose opacity-50 ${pColor}`}
             >
-              Berikut ini beberapa tools yang biasa saya pakai untuk pembuatan
-              website
+              Berikut ini adalah skill dan tools yang biasa saya gunakan dalam
+              pengembangan website.
             </p>
             <div
               className={`tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 `}
@@ -206,14 +229,14 @@ function App() {
             {displayedProyek.map((proyek) => (
               <div
                 key={proyek.id}
-                className={`p-4  rounded-md ${projectBg}`}
+                className={`p-4  rounded-lg flex flex-col h-full ${projectBg}`}
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay={proyek.dad}
                 data-aos-once="true"
               >
                 <img src={proyek.gambar} alt="proyek gambar" />
-                <div>
+                <div className="flex-1">
                   <h1 className={`text-2xl font-bold my-4 ${h1Color}`}>
                     {proyek.nama}
                   </h1>
@@ -224,20 +247,20 @@ function App() {
                     {proyek.tools.map((tool, index) => (
                       <p
                         key={index}
-                        className={`py-1 px-2 border  rounded-md font-semibold ${tooltext}`}
+                        className={`py-1 px-2 border  rounded-lg font-semibold ${tooltext}`}
                       >
                         {tool}
                       </p>
                     ))}
                   </div>
-                  <div className="mt-8 text-center">
-                    <a
-                      href="#"
-                      className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600"
-                    >
-                      lihat website
-                    </a>
-                  </div>
+                </div>
+                <div className="mt-8 text-center">
+                  <a
+                    href="./ComingSoon/index.html"
+                    className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600"
+                  >
+                    lihat website
+                  </a>
                 </div>
               </div>
             ))}
@@ -279,7 +302,7 @@ function App() {
           <form
             action="https://formsubmit.co/mohammadherdiansyah84@gmail.com"
             method="POST"
-            className={`p-10 sm:w-fit w-full mx-auto rounded-md ${contactBg}`}
+            className={`p-10 sm:w-fit w-full mx-auto rounded-lg ${contactBg}`}
             autoComplete="off"
             data-aos="fade-up"
             data-aos-duration="1000"

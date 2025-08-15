@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #1c1c1c;
+        font-family: Arial, sans-serif;
+      }
+
+      .letter {
+        display: inline-block;
+        font-size: 3rem;
+        color: #ffffff;
+        animation: bounce 1s infinite;
+      }
+
+      /* Animasi bounce */
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(2);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="text"></h1>
+
+    <script>
+      const text = "Coming Soon...";
+      const h1 = document.getElementById("text");
+
+      // Ubah tiap huruf jadi span biar bisa dianimasikan
+      text.split("").forEach((char, index) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.classList.add("letter");
+        // delay animasi supaya berurutan seperti gelombang
+        span.style.animationDelay = `${index * 0.1}s`;
+        h1.appendChild(span);
+      });
+    </script>
+  </body>
+</html>

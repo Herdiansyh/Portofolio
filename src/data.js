@@ -14,10 +14,10 @@ import Tools5 from "/assets/tools/bootstrap.png";
 import Tools6 from "/assets/tools/js.png";
 import Tools7 from "/assets/tools/nodejs.png";
 import Tools8 from "/assets/tools/github.png";
-import Tools9 from "/assets/tools/ai.png";
+import Tools9 from "/assets/tools/laravel.png";
 import Tools10 from "/assets/tools/canva.png";
 import Tools11 from "/assets/tools/figma.png";
-
+import Tools12 from "/assets/tools/php.png";
 export const listTools = [
   {
     id: 1,
@@ -78,8 +78,8 @@ export const listTools = [
   {
     id: 9,
     gambar: Tools9,
-    nama: "Adobe Illustrator",
-    ket: "Design App",
+    nama: "Laravel",
+    ket: "Framework",
     dad: "900",
   },
   {
@@ -96,11 +96,18 @@ export const listTools = [
     ket: "Design App",
     dad: "1100",
   },
+  {
+    id: 12,
+    gambar: Tools12,
+    nama: "PHP",
+    ket: "Language",
+    dad: "1200",
+  },
 ];
 
-import Proyek1 from "/assets/proyek/proyek1.webp";
-import Proyek2 from "/assets/proyek/proyek2.webp";
-import Proyek3 from "/assets/proyek/proyek3.webp";
+import Proyek1 from "/assets/proyek/proyek1.png";
+import Proyek2 from "/assets/proyek/proyek2.png";
+import Proyek3 from "/assets/proyek/comingsoon.png";
 import Proyek4 from "/assets/proyek/proyek4.webp";
 import Proyek5 from "/assets/proyek/proyek5.webp";
 import Proyek6 from "/assets/proyek/proyek6.webp";
@@ -109,49 +116,70 @@ export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Website Sekolah",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS"],
+    nama: "Website KanbanBoard",
+    desk: "Website untuk mengelola tugas dan proyek secara visual. Dibangun dengan React, Laravel, dan Inertia.js, serta menggunakan Dnd Kit untuk fitur drag & drop.",
+    tools: ["React", "Laravel", "Inertia", "Dnd Kit"],
     dad: "200",
+    // url: "https://inventorymu.vercel.app"
   },
   {
     id: 2,
     gambar: Proyek2,
-    nama: "Company Profile",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS", "Swiper", "Lightbox Gallery"],
+    nama: "Website Inventory",
+    desk: "Website Inventory ini adalah aplikasi inventory untuk mengelola stok dan transaksi barang secara real-time.",
+    tools: ["React", "Laravel (RESTful API)", "JWT Auth", "Axios", "Tailwind"],
     dad: "300",
+    // url: "https://inventorymu.vercel.app"
   },
   {
     id: 3,
     gambar: Proyek3,
-    nama: "Web Pernikahan 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "TailwindCSS", "AOS"],
+    nama: "Web Company Profile",
+    desk: "Comingsoon......",
+    tools: ["........"],
     dad: "400",
+    // url: "https://inventorymu.vercel.app"
   },
   {
     id: 4,
-    gambar: Proyek4,
-    nama: "Website Course",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "Bootstrap", "AOS"],
+    gambar: Proyek3,
+    nama: "Web Saweria",
+    desk: "Comingsoon......",
+    tools: ["........"],
     dad: "500",
+    // url: "https://inventorymu.vercel.app"
   },
   {
     id: 5,
-    gambar: Proyek5,
-    nama: "Web Portfolio",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
-    dad: "600",
+    gambar: Proyek3,
+    nama: "CuFlix",
+    desk: "comingsoon......",
+    tools: ["........"],
+    dad: "500",
+    // url: "https://inventorymu.vercel.app"
   },
-  {
-    id: 6,
-    gambar: Proyek6,
-    nama: "Company Profile 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["NextJS", "TailwindCSS", "Framermotion"],
-    dad: "700",
-  },
+  // {
+  //   id: 4,
+  //   gambar: Proyek4,
+  //   nama: "Website Course",
+  //   desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+  //   tools: ["Vite", "ReactJS", "Bootstrap", "AOS"],
+  //   dad: "500",
+  // },
+  // {
+  //   id: 5,
+  //   gambar: Proyek5,
+  //   nama: "Web Portfolio",
+  //   desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+  //   tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
+  //   dad: "600",
+  // },
+  // {
+  //   id: 6,
+  //   gambar: Proyek6,
+  //   nama: "Company Profile 2.0",
+  //   desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+  //   tools: ["NextJS", "TailwindCSS", "Framermotion"],
+  //   dad: "700",
+  // },
 ];

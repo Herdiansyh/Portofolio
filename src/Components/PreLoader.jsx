@@ -5,7 +5,6 @@ const PreLoader = () => {
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
   }, []);
-
   return (
     loading && (
       <div className="w-screen h-screen flex fixed items-center justify-center bg-black z-55">
