@@ -53,15 +53,12 @@ git clone <repo-url>
 cd <repo-folder>
 Install dependencies:
 
-bash
-Copy
-Edit
+---
+
 npm install
 Start the development server:
 
-bash
-Copy
-Edit
+
 npm run dev
 Open http://localhost:5173 in your browser.
 
@@ -75,15 +72,12 @@ AOS animations refresh automatically when the theme changes to prevent disappear
 🚀 Deployment
 Build for production:
 
-bash
-Copy
-Edit
+
+
 npm run build
 Preview production build locally:
 
-bash
-Copy
-Edit
+
 npm run preview
 Deploy to Vercel, Netlify, or GitHub Pages.
 
