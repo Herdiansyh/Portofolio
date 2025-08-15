@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeProviderContext = createContext({
@@ -28,9 +30,26 @@ export function ThemeProvider({
   // 2. Efek untuk update DOM dan system preference listener
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
+
+    // Tambahkan transition CSS
+    // Di ThemeProvider, ganti dengan timing function Tailwind yang persis:
+    body.style.transition =
+      "background-color 300ms cubic-bezier(0.4, 0, 0.2, 1)";
+    root.style.transition =
+      "background-color 300ms cubic-bezier(0.4, 0, 0.2, 1)";
     const applyTheme = (themeToApply) => {
       root.classList.remove("light", "dark");
       root.classList.add(themeToApply);
+
+      // Tambahkan background ke body
+      if (themeToApply === "dark") {
+        body.style.backgroundColor = "#18181b"; // zinc-900
+        root.style.backgroundColor = "#18181b";
+      } else {
+        body.style.backgroundColor = "#f3f4f6"; // gray-100
+        root.style.backgroundColor = "#f3f4f6";
+      }
     };
 
     if (theme === "system") {

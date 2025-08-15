@@ -1,3 +1,4 @@
+import { FiMoon, FiSun } from "react-icons/fi";
 import { useTheme } from "./ThemeProvider";
 
 export function ThemeSwitcher() {
@@ -7,14 +8,8 @@ export function ThemeSwitcher() {
   const handleToggle = () => setTheme(isDark ? "light" : "dark");
 
   return (
-    <div className="flex gap-2 items-center z-[54]">
-      <span
-        className={`text-sm ${
-          !isDark ? "text-blue-500 font-medium" : "text-slate-500"
-        }`}
-      >
-        Light
-      </span>
+    <div className="flex gap-2 items-center z-[54] ">
+      {/* Checkbox Toggle */}
       <input
         type="checkbox"
         id="dark-toggle"
@@ -22,18 +17,18 @@ export function ThemeSwitcher() {
         checked={isDark}
         onChange={handleToggle}
       />
-      <label htmlFor="dark-toggle" className="cursor-pointer">
-        <div className="flex h-5 w-9 items-center rounded-full bg-slate-400 p-1 transition-colors duration-300 peer-checked:bg-blue-500">
-          <div className="toggle-circle h-4 w-4 rounded-full bg-white transition-transform duration-300 peer-checked:translate-x-4"></div>
-        </div>
-      </label>
-      <span
-        className={`text-sm ${
-          isDark ? "text-blue-500 font-medium" : "text-slate-500"
-        }`}
+
+      <button
+        onClick={handleToggle}
+        className="flex items-center justify-center p-2 rounded-full hover:bg-gray-200  transition-colors"
+        aria-label="Toggle Theme"
       >
-        Dark
-      </span>
+        {isDark ? (
+          <FiSun size={27} className="text-yellow-500 hover:cursor-pointer" />
+        ) : (
+          <FiMoon size={27} className="text-blue-500 hover:cursor-pointer" />
+        )}
+      </button>
     </div>
   );
 }

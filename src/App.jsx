@@ -3,17 +3,40 @@ import Lanyard from "./Components/Lanyard/Lanyard";
 import DataImage, { listProyek } from "./data";
 import { listTools } from "./data";
 import { useTheme } from "./Components/ThemeProvider";
+import AOS from "aos";
+
 function App() {
   const [position, setPosition] = useState([0, 0, 10]);
   const { theme } = useTheme(); // Dapatkan tema saat ini
 
   // Warna untuk dark/light mode
-  const bgColor = theme === "dark" ? "bg-zinc-900" : "bg-gray-100";
-  const textColor = theme === "dark" ? "text-white" : "text-gray-100";
+  const projectBg = theme === "dark" ? "bg-zinc-800" : "bg-gray-300 shadow-lg";
+  const textColor = theme === "dark" ? "text-white" : "text-gray-700";
   const h1Color = theme === "dark" ? "text-white" : "text-black";
+  const contactBg = theme === "dark" ? "bg-zinc-800" : "bg-gray-300 shadow-lg";
+  const inputBg =
+    theme === "dark"
+      ? "border-zinc-500 text-white"
+      : "border-gray-500 text-black";
+  const tooltext =
+    theme === "dark"
+      ? "bg-zinc-600 border-zinc-500"
+      : "bg-gray-400 border-gray-100 text-black opacity-80";
+  const h1About =
+    theme === "dark" ? "text-white" : "text-black border-b border-zinc-700";
   const pColor = theme === "dark" ? "text-white opacity-80" : "text-black";
-  const cardBg = theme === "dark" ? "bg-zinc-800" : "bg-white";
-  const borderColor = theme === "dark" ? "bg-zinc-600" : "bg-gray-500";
+  const toolsBg =
+    theme === "dark"
+      ? "border-zinc-600 hover:bg-zinc-800 "
+      : "border-gray-200 bg-gray-200 shadow-lg hover:bg-gray-400 ";
+  const bgAbout = theme === "dark" ? "bg-zinc-800" : "bg-gray-200 shadow-lg";
+  const imgTools =
+    theme === "dark"
+      ? "bg-zinc-800 group-hover:bg-zinc-900"
+      : "bg-gray-400 group-hover:bg-gray-200";
+
+  const borderColor =
+    theme === "dark" ? "bg-zinc-600" : "bg-gray-200 shadow-lg";
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,9 +61,14 @@ function App() {
   // Batasi project yang ditampilkan
   const displayedProyek = showAll ? listProyek : listProyek.slice(0, 6);
 
+  // refresh AOS saat theme berubah
+  useEffect(() => {
+    AOS.refreshHard(); // lebih agresif
+  }, [theme]);
+
   return (
     <>
-      <div className={`min-h-screen transition-colors duration-300 ${bgColor}`}>
+      <div className={`min-h-screen transition-colors duration-300 `}>
         <div className="hero grid md:grid-cols-2 pt-0  items-center xl:gap-0 gap-6 grid-cols-1 ">
           <div className="animate__animated animate__fadeInUp animate__delay-2s ">
             <div className="-mt-21 sm:hidden">
@@ -88,16 +116,19 @@ function App() {
         {/* About */}
         <div className="tentang mt-32 py-10" id="about">
           <div
-            data-aos-once="true"
+            className={`xl:w-2/3 lg:w-3/4 w-full mx-auto p-7  rounded-lg 
+            ${bgAbout} `}
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg"
+            data-aos-once="true"
           >
-            <div className="flex flex-col m-auto items-center gap-3 mb-6  w-fit p-4 border-b border-zinc-200">
+            <div
+              className={`flex flex-col m-auto items-center gap-3 mb-6  w-fit p-4 border-b border-zinc-200 ${h1About}`}
+            >
               About Me
             </div>
 
-            <p className="text-base/loose mb-10">
+            <p className={`text-base/loose mb-10 ${pColor}`}>
               Ever since I discovered the world of web development, I’ve been
               driven by curiosity and a desire to learn. I love exploring new
               technologies, tackling challenges, and turning ideas into websites
@@ -107,7 +138,7 @@ function App() {
           </div>
           <div className="tools mt-32">
             <h1
-              className="text-4xl/snug font-bold mb-4"
+              className={`text-4xl/snug font-bold mb-4 ${h1Color}`}
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once="true"
@@ -119,15 +150,17 @@ function App() {
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="300"
-              className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full   text-base/loose opacity-50"
+              className={`xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full   text-base/loose opacity-50 ${pColor}`}
             >
               Berikut ini beberapa tools yang biasa saya pakai untuk pembuatan
               website
             </p>
-            <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+            <div
+              className={`tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 `}
+            >
               {listTools.map((tool) => (
                 <div
-                  className="group flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 "
+                  className={`group flex items-center gap-2 p-3 border  rounded-md  ${toolsBg}`}
                   key={tool.id}
                   data-aos="fade-up"
                   data-aos-duration="1000"
@@ -137,11 +170,11 @@ function App() {
                   <img
                     src={tool.gambar}
                     alt=""
-                    className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900"
+                    className={`w-14 p-1 ${imgTools}`}
                   />
                   <div>
-                    <h4 className="font-bold">{tool.nama}</h4>
-                    <p className="opacity-50">{tool.ket}</p>
+                    <h4 className={`font-bold ${h1Color}`}>{tool.nama}</h4>
+                    <p className={`opacity-50 ${pColor}`}>{tool.ket}</p>
                   </div>
                 </div>
               ))}
@@ -155,7 +188,7 @@ function App() {
             data-aos-once="true"
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-center text-4xl font-bold mb-2"
+            className={`text-center text-4xl font-bold mb-2 ${h1Color}`}
           >
             Projects
           </h1>
@@ -164,7 +197,7 @@ function App() {
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
-            className="text-base/loose text-center opacity-50"
+            className={`text-base/loose text-center opacity-50 ${pColor}`}
           >
             Berikut ini proyek yang telah saya buat
           </p>
@@ -173,7 +206,7 @@ function App() {
             {displayedProyek.map((proyek) => (
               <div
                 key={proyek.id}
-                className="p-4 bg-zinc-800 rounded-md"
+                className={`p-4  rounded-md ${projectBg}`}
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay={proyek.dad}
@@ -181,13 +214,17 @@ function App() {
               >
                 <img src={proyek.gambar} alt="proyek gambar" />
                 <div>
-                  <h1 className="text-2xl font-bold my-4 ">{proyek.nama}</h1>
-                  <p className="text-base/loose mb-4">{proyek.desk}</p>
+                  <h1 className={`text-2xl font-bold my-4 ${h1Color}`}>
+                    {proyek.nama}
+                  </h1>
+                  <p className={`text-base/loose mb-4 ${pColor}`}>
+                    {proyek.desk}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {proyek.tools.map((tool, index) => (
                       <p
                         key={index}
-                        className="py-1 px-2 border bg-zinc-600 border-zinc-500 rounded-md font-semibold"
+                        className={`py-1 px-2 border  rounded-md font-semibold ${tooltext}`}
                       >
                         {tool}
                       </p>
@@ -226,7 +263,7 @@ function App() {
             data-aos-once="true"
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-4xl mb-2 font-bold text-center"
+            className={`text-4xl mb-2 font-bold text-center ${h1Color}`}
           >
             Contact
           </h1>
@@ -235,14 +272,14 @@ function App() {
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
-            className="text-base/loose text-center mb-10 opacity-50"
+            className={`text-base/loose text-center mb-10 opacity-50 ${pColor}`}
           >
             Let's Connect with me
           </p>
           <form
             action="https://formsubmit.co/mohammadherdiansyah84@gmail.com"
             method="POST"
-            className="bg-zinc-800 p-10 sm:w-fit w-full mx-auto rounded-md"
+            className={`p-10 sm:w-fit w-full mx-auto rounded-md ${contactBg}`}
             autoComplete="off"
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -251,29 +288,31 @@ function App() {
           >
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <label className="font-semibold">Nama Lengkap</label>
+                <label className={`font-semibold ${h1Color}`}>
+                  Nama Lengkap
+                </label>
                 <input
                   type="text"
                   name="nama"
                   id="nama"
                   placeholder="Masukan nama..."
-                  className="border border-zinc-500 p-2 rounded-md"
+                  className={`border  p-2 rounded-md ${inputBg}`}
                   required
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="font-semibold">Email</label>
+                <label className={`font-semibold ${h1Color}`}>Email</label>
                 <input
                   type="text"
                   name="email"
                   id="email"
-                  className="border border-zinc-500 p-2 rounded-md"
+                  className={`border  p-2 rounded-md ${inputBg}`}
                   placeholder="Masukan email..."
                   required
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="font-semibold" htmlFor="pesan">
+                <label className={`font-semibold ${inputBg}`} htmlFor="pesan">
                   Pesan
                 </label>
                 <textarea
@@ -281,8 +320,7 @@ function App() {
                   id="pesan"
                   cols="45"
                   rows="7"
-                  className="border border-zinc-500 p-2 rounded-md"
-                  placeholder="Pesan..."
+                  className={`border p-2 rounded-md ${inputBg}`}
                   required
                 ></textarea>
               </div>

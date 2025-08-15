@@ -15,15 +15,16 @@ import {
   useRopeJoint,
   useSphericalJoint,
 } from "@react-three/rapier";
+
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-
-// replace with your own imports, see the usage snippet for details
-const cardGLB = "./assets/lanyard/card.glb";
-const lanyard = "./assets/lanyard/lanyard.png";
-
 import * as THREE from "three";
+import { useTheme } from "../ThemeProvider";
 
+// extend meshline ke dalam three.js
 extend({ MeshLineGeometry, MeshLineMaterial });
+
+// gambar lanyard
+const lanyard = "./assets/lanyard/lanyard.png";
 
 export default function Lanyard({
   position = [0, 0, 30],
@@ -31,10 +32,18 @@ export default function Lanyard({
   fov = 20,
   transparent = true,
 }) {
+  const { theme } = useTheme();
+
+  // pilih model GLB sesuai tema
+  const cardGLB =
+    theme === "light"
+      ? "./assets/lanyard/card2.glb"
+      : "./assets/lanyard/card.glb";
+
   return (
     <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
       <Canvas
-        camera={{ position: position, fov: fov }}
+        camera={{ position, fov }}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) =>
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)
@@ -42,7 +51,7 @@ export default function Lanyard({
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={1 / 60}>
-          <Band />
+          <Band cardGLB={cardGLB} />
         </Physics>
         <Environment blur={0.75}>
           <Lightformer
@@ -78,17 +87,20 @@ export default function Lanyard({
     </div>
   );
 }
-function Band({ maxSpeed = 50, minSpeed = 0 }) {
+
+function Band({ maxSpeed = 50, minSpeed = 0, cardGLB }) {
   const band = useRef(),
     fixed = useRef(),
     j1 = useRef(),
     j2 = useRef(),
     j3 = useRef(),
     card = useRef();
+
   const vec = new THREE.Vector3(),
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
+
   const segmentProps = {
     type: "dynamic",
     canSleep: true,
@@ -96,8 +108,10 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     angularDamping: 4,
     linearDamping: 4,
   };
+
   const { nodes, materials } = useGLTF(cardGLB);
   const texture = useTexture(lanyard);
+
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([
@@ -107,6 +121,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         new THREE.Vector3(),
       ])
   );
+
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
   const [isSmall, setIsSmall] = useState(
@@ -124,7 +139,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   useEffect(() => {
     if (hovered) {
       document.body.style.cursor = dragged ? "grabbing" : "grab";
-      return () => void (document.body.style.cursor = "auto");
+      return () => (document.body.style.cursor = "auto");
     }
   }, [hovered, dragged]);
 
@@ -132,9 +147,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     const handleResize = () => {
       setIsSmall(window.innerWidth < 1024);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -152,10 +165,11 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     }
     if (fixed.current) {
       [j1, j2].forEach((ref) => {
-        if (!ref.current.lerped)
+        if (!ref.current.lerped) {
           ref.current.lerped = new THREE.Vector3().copy(
             ref.current.translation()
           );
+        }
         const clampedDistance = Math.max(
           0.1,
           Math.min(1, ref.current.lerped.distanceTo(ref.current.translation()))
@@ -204,17 +218,18 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={(e) => (
-              e.target.releasePointerCapture(e.pointerId), drag(false)
-            )}
-            onPointerDown={(e) => (
-              e.target.setPointerCapture(e.pointerId),
+            onPointerUp={(e) => {
+              e.target.releasePointerCapture(e.pointerId);
+              drag(false);
+            }}
+            onPointerDown={(e) => {
+              e.target.setPointerCapture(e.pointerId);
               drag(
                 new THREE.Vector3()
                   .copy(e.point)
                   .sub(vec.copy(card.current.translation()))
-              )
-            )}
+              );
+            }}
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
