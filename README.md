@@ -1,12 +1,96 @@
-# React + Vite
+React + Tailwind Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a personal portfolio website built with React and Tailwind CSS. It showcases projects, skills, and contact information in a responsive and interactive design.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fully responsive design using Tailwind CSS
 
-## Expanding the ESLint configuration
+Dark/light mode with conditional styling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Animated sections using AOS (Animate On Scroll)
+
+Interactive 3D model component using react-three/fiber or modelviewer
+
+Contact form integrated with FormSubmit.co
+
+Smooth scrolling and transitions
+
+Projects section with “Show More” toggle
+
+Demo
+
+(Add link to live demo if available)
+
+Technologies Used
+
+React – Component-based user interface
+
+Vite – Fast development server and build tool
+
+Tailwind CSS – Utility-first CSS framework
+
+AOS – Scroll animations
+
+Remix Icon – Icon library
+
+FormSubmit.co – Form handling without backend
+
+react-three/fiber or modelviewer – 3D model rendering
+
+Project Structure
+src/
+├─ Components/ # Reusable components (Navbar, Footer, Lanyard, PreLoader)
+├─ data.js # Project and tool data
+├─ App.jsx # Main App component
+├─ main.jsx # Entry point, renders App inside ThemeProvider
+├─ index.css # Tailwind CSS and custom styles
+
+Installation
+
+Clone the repository:
+
+git clone <repo-url>
+cd <repo-folder>
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Open http://localhost:5173 in your browser.
+
+Tailwind & Dark Mode
+
+Uses conditional styling in React for dark/light mode.
+
+Backgrounds, text, and cards adjust according to the theme.
+
+AOS animations refresh automatically when the theme changes to prevent disappearing elements.
+
+Deployment
+
+Build for production:
+
+npm run build
+
+Preview production build locally:
+
+npm run preview
+
+Deploy to Vercel, Netlify, or GitHub Pages.
+
+Customization
+
+Add/remove projects in data.js
+
+Update skills/tools in data.js
+
+Customize 3D model in Components/Lanyard/Lanyard.jsx
+
+License
+
+Open-source and free to use for learning or personal portfolio purposes.
