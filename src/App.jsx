@@ -78,7 +78,7 @@ function App() {
     }).then((result) => {
       if (result.isConfirmed) {
         // trigger download
-        window.location.href = "/CV.pdf"; // pastikan file ada di public/CV.pdf
+        window.location.href = "/Cv/cv.pdf"; // pastikan file ada di public/CV.pdf
         // Atau bisa pakai tag <a> programmatically
       }
     });
