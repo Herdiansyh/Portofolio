@@ -95,6 +95,8 @@ function App() {
             <div
               className={`flex items-center gap-3 mb-6  w-fit p-4 rounded-2xl ${borderColor}`}
             >
+              <Lanyard position={position} gravity={[0, -60, 0]} />
+
               <img
                 src={DataImage.HeroImage}
                 alt=""
