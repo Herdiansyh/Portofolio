@@ -116,8 +116,8 @@ export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Website KanbanBoard",
-    desk: "Website untuk mengelola tugas dan proyek secara visual. Dibangun dengan React, Laravel, dan Inertia.js, serta menggunakan Dnd Kit untuk fitur drag & drop.",
+    nama: "Website Plannify",
+    desk: "Website kanban board untuk mengelola tugas dan proyek secara visual. Dibangun dengan React, Laravel, dan Inertia.js, serta menggunakan Dnd Kit untuk fitur drag & drop.",
     tools: ["React", "Laravel", "Inertia", "Dnd Kit"],
     dad: "200",
     // url: "https://inventorymu.vercel.app"
@@ -131,33 +131,33 @@ export const listProyek = [
     dad: "300",
     // url: "https://inventorymu.vercel.app"
   },
-  {
-    id: 3,
-    gambar: Proyek3,
-    nama: "Web Company Profile",
-    desk: "Comingsoon......",
-    tools: ["........"],
-    dad: "400",
-    // url: "https://inventorymu.vercel.app"
-  },
-  {
-    id: 4,
-    gambar: Proyek3,
-    nama: "Web Saweria",
-    desk: "Comingsoon......",
-    tools: ["........"],
-    dad: "500",
-    // url: "https://inventorymu.vercel.app"
-  },
-  {
-    id: 5,
-    gambar: Proyek3,
-    nama: "CuFlix",
-    desk: "comingsoon......",
-    tools: ["........"],
-    dad: "500",
-    // url: "https://inventorymu.vercel.app"
-  },
+  // {
+  //   id: 3,
+  //   gambar: Proyek3,
+  //   nama: "Web Company Profile",
+  //   desk: "Comingsoon......",
+  //   tools: ["........"],
+  //   dad: "400",
+  //   // url: "https://inventorymu.vercel.app"
+  // },
+  // {
+  //   id: 4,
+  //   gambar: Proyek3,
+  //   nama: "Web Saweria",
+  //   desk: "Comingsoon......",
+  //   tools: ["........"],
+  //   dad: "500",
+  //   // url: "https://inventorymu.vercel.app"
+  // },
+  // {
+  //   id: 5,
+  //   gambar: Proyek3,
+  //   nama: "CuFlix",
+  //   desk: "comingsoon......",
+  //   tools: ["........"],
+  //   dad: "500",
+  //   // url: "https://inventorymu.vercel.app"
+  // },
   // {
   //   id: 4,
   //   gambar: Proyek4,
