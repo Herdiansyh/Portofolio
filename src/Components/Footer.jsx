@@ -34,7 +34,7 @@ function Footer() {
             className={`ri-instagram-fill ri-2x hover:text-gray-500 ${pColor}`}
           ></i>
         </a>
-        <a href="https://www.linkedin.com/in/moh-herdiansyah-171868341/">
+        <a href="www.linkedin.com/in/mohamad-herdiansyah13">
           <i
             className={`ri-linkedin-fill ri-2x hover:text-gray-500 ${pColor}`}
           ></i>
