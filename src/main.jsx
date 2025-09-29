@@ -23,7 +23,7 @@ createRoot(document.getElementById("root")).render(
         <Navbar />
 
         <App />
-        <Chatbot />
+
         <Footer />
       </div>
     </ThemeProvider>
