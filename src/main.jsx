@@ -12,6 +12,7 @@ import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
 import "./index.css";
 import { ThemeProvider } from "./Components/ThemeProvider.jsx";
+import Chatbot from "./Components/Chatbot.jsx";
 AOS.init();
 
 createRoot(document.getElementById("root")).render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
         <Navbar />
 
         <App />
+        <Chatbot />
         <Footer />
       </div>
     </ThemeProvider>

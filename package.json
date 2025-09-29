@@ -16,7 +16,13 @@
     "@tailwindcss/vite": "^4.1.11",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
+    "axios": "^1.12.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
     "meshline": "^3.3.1",
+    "node-fetch": "^3.3.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
@@ -37,5 +43,18 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "vite": "^7.1.2"
-  }
+  },
+  "description": "A personal portfolio website built with **React** and **Tailwind CSS**.   It showcases **projects**, **skills**, and **contact information** in a responsive and interactive design.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Herdiansyh/Portofolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Herdiansyh/Portofolio/issues"
+  },
+  "homepage": "https://github.com/Herdiansyh/Portofolio#readme"
 }

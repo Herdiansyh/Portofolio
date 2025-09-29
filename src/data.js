@@ -135,8 +135,8 @@ export const listProyek = [
   //   id: 3,
   //   gambar: Proyek3,
   //   nama: "Web Company Profile",
-  //   desk: "Comingsoon......",
-  //   tools: ["........"],
+  //   desk: "Website multi-purpose company profile dengan CMS untuk memudahkan pengelolaan konten. Fitur meliputi halaman dinamis, manajemen pengguna, dan dashboard admin.",
+  //   tools: ["Laravel", "TailwindCSS", "MySQL", "PHP"],
   //   dad: "400",
   //   // url: "https://inventorymu.vercel.app"
   // },
