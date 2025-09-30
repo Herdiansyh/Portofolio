@@ -86,7 +86,7 @@ function App() {
 
   return (
     <>
-      <div className={`min-h-screen transition-colors duration-300 `}>
+      <div className={`min-h-screen transition-colors duration-300 p-2 md:p-6`}>
         <div className="hero grid md:grid-cols-2 pt-0  items-center xl:gap-0 gap-6 grid-cols-1 ">
           <div className="animate__animated animate__fadeInUp animate__delay-2s ">
             <div className="-mt-21 sm:hidden">
