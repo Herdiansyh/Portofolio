@@ -33,13 +33,13 @@ export const listTools = [
     ket: "Framework",
     dad: "200",
   },
-  {
-    id: 3,
-    gambar: Tools3,
-    nama: "Next JS",
-    ket: "Framework",
-    dad: "300",
-  },
+  // {
+  //   id: 3,
+  //   gambar: Tools3,
+  //   nama: "Next JS",
+  //   ket: "Framework",
+  //   dad: "300",
+  // },
   {
     id: 4,
     gambar: Tools4,
@@ -107,7 +107,7 @@ export const listTools = [
 
 import Proyek1 from "/assets/proyek/proyek1.png";
 import Proyek2 from "/assets/proyek/proyek2.png";
-import Proyek3 from "/assets/proyek/comingsoon.png";
+import Proyek3 from "/assets/proyek/proyek3.png";
 import Proyek4 from "/assets/proyek/proyek4.webp";
 import Proyek5 from "/assets/proyek/proyek5.webp";
 import Proyek6 from "/assets/proyek/proyek6.webp";
@@ -131,15 +131,15 @@ export const listProyek = [
     dad: "300",
     // url: "https://inventorymu.vercel.app"
   },
-  // {
-  //   id: 3,
-  //   gambar: Proyek3,
-  //   nama: "Web Company Profile",
-  //   desk: "Website multi-purpose company profile dengan CMS untuk memudahkan pengelolaan konten. Fitur meliputi halaman dinamis, manajemen pengguna, dan dashboard admin.",
-  //   tools: ["Laravel", "TailwindCSS", "MySQL", "PHP"],
-  //   dad: "400",
-  //   // url: "https://inventorymu.vercel.app"
-  // },
+  {
+    id: 3,
+    gambar: Proyek3,
+    nama: "Web Company Profile",
+    desk: "Website multi-purpose company profile dengan CMS untuk memudahkan pengelolaan konten. Fitur meliputi halaman dinamis, manajemen pengguna, dan dashboard admin.",
+    tools: ["Laravel", "TailwindCSS", "MySQL", "PHP"],
+    dad: "400",
+    // url: "https://inventorymu.vercel.app"
+  },
   // {
   //   id: 4,
   //   gambar: Proyek3,
