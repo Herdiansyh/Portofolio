@@ -255,8 +255,9 @@ function App() {
                   </div>
                 </div>
                 <div className="mt-8 text-center">
+                  {console.log("URL:", proyek.url, typeof proyek.url)}
                   <a
-                    href="./ComingSoon/index.html"
+                    href={proyek.url ? proyek.url : "./ComingSoon/index.html"}
                     className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600"
                   >
                     lihat website

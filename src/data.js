@@ -108,8 +108,8 @@ export const listTools = [
 import Proyek1 from "/assets/proyek/proyek1.png";
 import Proyek2 from "/assets/proyek/proyek2.png";
 import Proyek3 from "/assets/proyek/proyek3.png";
-import Proyek4 from "/assets/proyek/proyek4.webp";
-import Proyek5 from "/assets/proyek/proyek5.webp";
+import Proyek4 from "/assets/proyek/proyek4.png";
+import Proyek5 from "/assets/proyek/proyek5.png";
 import Proyek6 from "/assets/proyek/proyek6.webp";
 
 export const listProyek = [
@@ -124,40 +124,41 @@ export const listProyek = [
   },
   {
     id: 2,
+    gambar: Proyek4,
+    nama: "Web Digital Approval",
+    desk: "sebuah website pengajuan dokumen secara digital yang memudahkan proses persetujuan dan pelacakan dokumen dalam organisasi. untuk mencoba website silahkan login dengan akun admin (admin@admin.com, password:123123123)",
+    tools: ["React", "Laravel", "Inertia.js", "TailwindCSS"],
+    dad: "300",
+    url: "https://digital-approval.omadi.web.id/",
+  },
+  {
+    id: 3,
+    gambar: Proyek5,
+    nama: "Chill Movie",
+    desk: "Aplikasi web untuk menampilkan berbagai koleksi film dari berbagai genre. Dibangun dengan ReactJS dan TailwindCSS, serta memanfaatkan fake api untuk data film dan user authentication. serta menggunakan state management dengan Redux Toolkit",
+    tools: ["ReactJS", "TailwindCSS", "Redux Toolkit"],
+    dad: "400",
+    url: "https://movies-v4.vercel.app/",
+  },
+  {
+    id: 4,
     gambar: Proyek2,
     nama: "Website Inventory",
     desk: "Website Inventory ini adalah aplikasi inventory untuk mengelola stok dan transaksi barang secara real-time.",
     tools: ["React", "Laravel (RESTful API)", "JWT Auth", "Axios", "Tailwind"],
-    dad: "300",
+    dad: "500",
     // url: "https://inventorymu.vercel.app"
   },
   {
-    id: 3,
+    id: 5,
     gambar: Proyek3,
     nama: "Web Company Profile",
     desk: "Website multi-purpose company profile dengan CMS untuk memudahkan pengelolaan konten. Fitur meliputi halaman dinamis, manajemen pengguna, dan dashboard admin.",
     tools: ["Laravel", "TailwindCSS", "MySQL", "PHP"],
-    dad: "400",
+    dad: "600",
     // url: "https://inventorymu.vercel.app"
   },
-  // {
-  //   id: 4,
-  //   gambar: Proyek3,
-  //   nama: "Web Saweria",
-  //   desk: "Comingsoon......",
-  //   tools: ["........"],
-  //   dad: "500",
-  //   // url: "https://inventorymu.vercel.app"
-  // },
-  // {
-  //   id: 5,
-  //   gambar: Proyek3,
-  //   nama: "CuFlix",
-  //   desk: "comingsoon......",
-  //   tools: ["........"],
-  //   dad: "500",
-  //   // url: "https://inventorymu.vercel.app"
-  // },
+
   // {
   //   id: 4,
   //   gambar: Proyek4,
