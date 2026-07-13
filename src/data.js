@@ -111,6 +111,7 @@ import Proyek3 from "/assets/proyek/proyek3.png";
 import Proyek4 from "/assets/proyek/proyek4.png";
 import Proyek5 from "/assets/proyek/proyek5.png";
 import Proyek6 from "/assets/proyek/proyek6.webp";
+import Proyek7 from "/assets/proyek/proyek7.png";
 
 export const listProyek = [
   {
@@ -157,6 +158,14 @@ export const listProyek = [
     tools: ["Laravel", "TailwindCSS", "MySQL", "PHP"],
     dad: "600",
     // url: "https://inventorymu.vercel.app"
+  },
+  {
+    id: 6,
+    gambar: Proyek7,
+    nama: "Checksheet ESD",
+    desk: "Aplikasi web untuk digitalisasi proses inspeksi Electrostatic Discharge (ESD). Dilengkapi dengan fitur scan dan cetak QR Code, pengelolaan checksheet digital, pelaporan hasil inspeksi, serta workflow untuk meneruskan temuan NG (Not Good) ke department terkait dan tim maintenance hingga proses tindak lanjut selesai.",
+    tools: ["Laravel", "TailwindCSS", "SQL Server", "PHP"],
+    dad: "700",
   },
 
   // {
