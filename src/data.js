@@ -112,6 +112,7 @@ import Proyek4 from "/assets/proyek/proyek4.png";
 import Proyek5 from "/assets/proyek/proyek5.png";
 import Proyek6 from "/assets/proyek/proyek6.webp";
 import Proyek7 from "/assets/proyek/proyek7.png";
+import Proyek8 from "/assets/proyek/proyek8.png";
 
 export const listProyek = [
   {
@@ -166,6 +167,15 @@ export const listProyek = [
     desk: "Aplikasi web untuk digitalisasi proses inspeksi Electrostatic Discharge (ESD). Dilengkapi dengan fitur scan dan cetak QR Code, pengelolaan checksheet digital, pelaporan hasil inspeksi, serta workflow untuk meneruskan temuan NG (Not Good) ke department terkait dan tim maintenance hingga proses tindak lanjut selesai.",
     tools: ["Laravel", "TailwindCSS", "SQL Server", "PHP"],
     dad: "700",
+  },
+  {
+    id: 7,
+    gambar: Proyek8,
+    nama: "Workforce Evaluation Management System",
+    desk: "Aplikasi web untuk mengelola dan mengevaluasi kinerja tenaga kerja secara terstruktur. Dibangun dengan Laravel sebagai backend (REST API) dan React TypeScript sebagai frontend, menggunakan Chakra UI v3 untuk komponen antarmuka, serta di-deploy pada IIS dengan SQL Server sebagai database.",
+    tools: ["Laravel", "React TS", "Chakra UI v3", "SQL Server", "IIS"],
+    dad: "800",
+    // url: ""
   },
 
   // {
